@@ -152,8 +152,8 @@ void lvgl_init()
     tft.setBrightness(128);
 
     /*Calibrate touch screen*/
-    uint16_t calData[] = {0, 0, 0, 280, 240, 0, 240, 280};
-    tft.setTouchCalibrate(calData);
+    // uint16_t calData[] = {0, 0, 0, 280, 240, 0, 240, 280};
+    // tft.setTouchCalibrate(calData);
 
     lv_init();
 
@@ -162,7 +162,6 @@ void lvgl_init()
     static uint16_t buf[LCD_WIDTH * LCD_HEIGHT / 10];
     lv_display_set_flush_cb(disp, display_flush);
     lv_display_set_buffers(disp, buf, NULL, sizeof(buf), LV_DISPLAY_RENDER_MODE_PARTIAL);
-    lv_display_set_default(disp);
 
     /*Initialize the touch device driver*/
     lv_indev_t * indev = lv_indev_create();
